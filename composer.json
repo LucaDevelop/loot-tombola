@@ -1,0 +1,7 @@
+{
+    "require": {
+        "unreal4u/telegram-api": "^3.4",
+        "blocktrail/simply-random": "~1.0",
+        "texthtml/php-lock": "^2.2"
+    }
+}

@@ -1,0 +1,1755 @@
+[
+    {
+        "name": "kelunik/certificate",
+        "version": "v1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kelunik/certificate.git",
+            "reference": "524fa432ed1b5f50efbe7749f3c19e28a9866bc7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kelunik/certificate/zipball/524fa432ed1b5f50efbe7749f3c19e28a9866bc7",
+            "reference": "524fa432ed1b5f50efbe7749f3c19e28a9866bc7",
+            "shasum": ""
+        },
+        "require": {
+            "ext-openssl": "*",
+            "php": "^5.4 | ^7.0"
+        },
+        "require-dev": {
+            "fabpot/php-cs-fixer": "^1.9",
+            "phpunit/phpunit": "^4.8"
+        },
+        "time": "2017-07-04T19:37:30+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Kelunik\\Certificate\\": "lib"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Niklas Keller",
+                "email": "me@kelunik.com"
+            }
+        ],
+        "description": "Access certificate details and transform between different formats.",
+        "keywords": [
+            "DER",
+            "certificate",
+            "certificates",
+            "openssl",
+            "pem",
+            "x509"
+        ]
+    },
+    {
+        "name": "amphp/amp",
+        "version": "v2.1.1",
+        "version_normalized": "2.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/amphp/amp.git",
+            "reference": "7075ef7d74dbd32626bfd31c976b23055c3ade6a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/amphp/amp/zipball/7075ef7d74dbd32626bfd31c976b23055c3ade6a",
+            "reference": "7075ef7d74dbd32626bfd31c976b23055c3ade6a",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7"
+        },
+        "require-dev": {
+            "amphp/phpunit-util": "^1",
+            "friendsofphp/php-cs-fixer": "^2.3",
+            "phpstan/phpstan": "^0.8.5",
+            "phpunit/phpunit": "^6.0.9",
+            "react/promise": "^2"
+        },
+        "time": "2018-12-11T10:31:37+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Amp\\": "lib"
+            },
+            "files": [
+                "lib/functions.php",
+                "lib/Internal/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Bob Weinand",
+                "email": "bobwei9@hotmail.com"
+            },
+            {
+                "name": "Niklas Keller",
+                "email": "me@kelunik.com"
+            },
+            {
+                "name": "Daniel Lowrey",
+                "email": "rdlowrey@php.net"
+            },
+            {
+                "name": "Aaron Piotrowski",
+                "email": "aaron@trowski.com"
+            }
+        ],
+        "description": "A non-blocking concurrency framework for PHP applications.",
+        "homepage": "http://amphp.org/amp",
+        "keywords": [
+            "async",
+            "asynchronous",
+            "awaitable",
+            "concurrency",
+            "event",
+            "event-loop",
+            "future",
+            "non-blocking",
+            "promise"
+        ]
+    },
+    {
+        "name": "amphp/byte-stream",
+        "version": "v1.5.1",
+        "version_normalized": "1.5.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/amphp/byte-stream.git",
+            "reference": "6bbfcb6f47e92577e739586ba0c87e867be70a23"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/amphp/byte-stream/zipball/6bbfcb6f47e92577e739586ba0c87e867be70a23",
+            "reference": "6bbfcb6f47e92577e739586ba0c87e867be70a23",
+            "shasum": ""
+        },
+        "require": {
+            "amphp/amp": "^2"
+        },
+        "require-dev": {
+            "amphp/php-cs-fixer-config": "dev-master",
+            "amphp/phpunit-util": "^1",
+            "friendsofphp/php-cs-fixer": "^2.3",
+            "infection/infection": "^0.9.3",
+            "phpunit/phpunit": "^6"
+        },
+        "time": "2018-12-27T18:08:06+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Amp\\ByteStream\\": "lib"
+            },
+            "files": [
+                "lib/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Niklas Keller",
+                "email": "me@kelunik.com"
+            },
+            {
+                "name": "Aaron Piotrowski",
+                "email": "aaron@trowski.com"
+            }
+        ],
+        "description": "A stream abstraction to make working with non-blocking I/O simple.",
+        "homepage": "http://amphp.org/byte-stream",
+        "keywords": [
+            "amp",
+            "amphp",
+            "async",
+            "io",
+            "non-blocking",
+            "stream"
+        ]
+    },
+    {
+        "name": "amphp/parser",
+        "version": "v1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/amphp/parser.git",
+            "reference": "f83e68f03d5b8e8e0365b8792985a7f341c57ae1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/amphp/parser/zipball/f83e68f03d5b8e8e0365b8792985a7f341c57ae1",
+            "reference": "f83e68f03d5b8e8e0365b8792985a7f341c57ae1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "^2.3",
+            "phpunit/phpunit": "^6"
+        },
+        "time": "2017-06-06T05:29:10+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Amp\\Parser\\": "lib"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Niklas Keller",
+                "email": "me@kelunik.com"
+            },
+            {
+                "name": "Aaron Piotrowski",
+                "email": "aaron@trowski.com"
+            }
+        ],
+        "description": "A generator parser to make streaming parsers simple.",
+        "homepage": "https://github.com/amphp/parser",
+        "keywords": [
+            "async",
+            "non-blocking",
+            "parser",
+            "stream"
+        ]
+    },
+    {
+        "name": "amphp/uri",
+        "version": "v0.1.3",
+        "version_normalized": "0.1.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/amphp/uri.git",
+            "reference": "b857ba4df3cf0852302ba1637fccce4ce1205241"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/amphp/uri/zipball/b857ba4df3cf0852302ba1637fccce4ce1205241",
+            "reference": "b857ba4df3cf0852302ba1637fccce4ce1205241",
+            "shasum": ""
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "^2.3",
+            "phpunit/phpunit": "^6"
+        },
+        "time": "2017-10-23T12:40:35+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Amp\\Uri\\": "src"
+            },
+            "files": [
+                "src/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Niklas Keller",
+                "email": "me@kelunik.com"
+            },
+            {
+                "name": "Daniel Lowrey"
+            }
+        ],
+        "description": "Uri Parser and Resolver.",
+        "homepage": "https://github.com/amphp/uri"
+    },
+    {
+        "name": "amphp/process",
+        "version": "v1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/amphp/process.git",
+            "reference": "355b1e561b01c16ab3d78fada1ad47ccc96df70e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/amphp/process/zipball/355b1e561b01c16ab3d78fada1ad47ccc96df70e",
+            "reference": "355b1e561b01c16ab3d78fada1ad47ccc96df70e",
+            "shasum": ""
+        },
+        "require": {
+            "amphp/amp": "^2",
+            "amphp/byte-stream": "^1.4",
+            "php": ">=7"
+        },
+        "require-dev": {
+            "amphp/php-cs-fixer-config": "dev-master",
+            "amphp/phpunit-util": "^1",
+            "phpunit/phpunit": "^6"
+        },
+        "time": "2019-02-26T16:33:03+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Amp\\Process\\": "lib"
+            },
+            "files": [
+                "lib/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Bob Weinand",
+                "email": "bobwei9@hotmail.com"
+            },
+            {
+                "name": "Niklas Keller",
+                "email": "me@kelunik.com"
+            },
+            {
+                "name": "Aaron Piotrowski",
+                "email": "aaron@trowski.com"
+            }
+        ],
+        "description": "Asynchronous process manager.",
+        "homepage": "https://github.com/amphp/process"
+    },
+    {
+        "name": "amphp/windows-registry",
+        "version": "v0.3.2",
+        "version_normalized": "0.3.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/amphp/windows-registry.git",
+            "reference": "834af7a30ad7c006b0326ccd2686ddc6e6943366"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/amphp/windows-registry/zipball/834af7a30ad7c006b0326ccd2686ddc6e6943366",
+            "reference": "834af7a30ad7c006b0326ccd2686ddc6e6943366",
+            "shasum": ""
+        },
+        "require": {
+            "amphp/amp": "^2",
+            "amphp/byte-stream": "^1.4",
+            "amphp/process": "^1"
+        },
+        "require-dev": {
+            "amphp/php-cs-fixer-config": "dev-master"
+        },
+        "time": "2018-10-24T03:34:54+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Amp\\WindowsRegistry\\": "lib"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Niklas Keller",
+                "email": "me@kelunik.com"
+            }
+        ],
+        "description": "Windows Registry Reader."
+    },
+    {
+        "name": "amphp/cache",
+        "version": "v1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/amphp/cache.git",
+            "reference": "ab2339e465d9d383dc748f288d530fd7cd7aadea"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/amphp/cache/zipball/ab2339e465d9d383dc748f288d530fd7cd7aadea",
+            "reference": "ab2339e465d9d383dc748f288d530fd7cd7aadea",
+            "shasum": ""
+        },
+        "require": {
+            "amphp/amp": "^2"
+        },
+        "require-dev": {
+            "amphp/phpunit-util": "^1",
+            "friendsofphp/php-cs-fixer": "^2.3",
+            "phpunit/phpunit": "^6"
+        },
+        "time": "2017-10-04T19:22:12+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Amp\\Cache\\": "lib"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Niklas Keller",
+                "email": "me@kelunik.com"
+            },
+            {
+                "name": "Daniel Lowrey",
+                "email": "rdlowrey@php.net"
+            }
+        ],
+        "description": "A promise-aware caching API for Amp.",
+        "homepage": "https://github.com/amphp/cache"
+    },
+    {
+        "name": "daverandom/libdns",
+        "version": "v2.0.1",
+        "version_normalized": "2.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/DaveRandom/LibDNS.git",
+            "reference": "1ecd825b6fa9bb3fddc07751997e29dc78749b95"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/DaveRandom/LibDNS/zipball/1ecd825b6fa9bb3fddc07751997e29dc78749b95",
+            "reference": "1ecd825b6fa9bb3fddc07751997e29dc78749b95",
+            "shasum": ""
+        },
+        "require": {
+            "ext-ctype": "*",
+            "php": ">=7.0"
+        },
+        "suggest": {
+            "ext-intl": "Required for IDN support"
+        },
+        "time": "2018-01-10T15:56:17+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "LibDNS\\": "src/"
+            },
+            "files": [
+                "src/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "DNS protocol implementation written in pure PHP",
+        "keywords": [
+            "dns"
+        ]
+    },
+    {
+        "name": "amphp/dns",
+        "version": "v0.9.14",
+        "version_normalized": "0.9.14.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/amphp/dns.git",
+            "reference": "1ccd6337f72107ba422ae72a5812687739d214c8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/amphp/dns/zipball/1ccd6337f72107ba422ae72a5812687739d214c8",
+            "reference": "1ccd6337f72107ba422ae72a5812687739d214c8",
+            "shasum": ""
+        },
+        "require": {
+            "amphp/amp": "^2",
+            "amphp/byte-stream": "^1.1",
+            "amphp/cache": "^1.2",
+            "amphp/parser": "^1",
+            "amphp/windows-registry": "^0.3",
+            "daverandom/libdns": "^2.0.1",
+            "ext-filter": "*",
+            "php": ">=7.0"
+        },
+        "require-dev": {
+            "amphp/php-cs-fixer-config": "dev-master",
+            "amphp/phpunit-util": "^1",
+            "phpunit/phpunit": "^6"
+        },
+        "time": "2019-01-25T04:12:31+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Amp\\Dns\\": "lib"
+            },
+            "files": [
+                "lib/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Bob Weinand",
+                "email": "bobwei9@hotmail.com"
+            },
+            {
+                "name": "Niklas Keller",
+                "email": "me@kelunik.com"
+            },
+            {
+                "name": "Daniel Lowrey",
+                "email": "rdlowrey@php.net"
+            },
+            {
+                "name": "Chris Wright",
+                "email": "addr@daverandom.com"
+            },
+            {
+                "name": "Aaron Piotrowski",
+                "email": "aaron@trowski.com"
+            }
+        ],
+        "description": "Async DNS resolution for Amp.",
+        "homepage": "https://github.com/amphp/dns",
+        "keywords": [
+            "amp",
+            "amphp",
+            "async",
+            "client",
+            "dns",
+            "resolve"
+        ]
+    },
+    {
+        "name": "amphp/sync",
+        "version": "v1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/amphp/sync.git",
+            "reference": "a1d8f244eb19e3e2a96abc4686cebc80995bbc90"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/amphp/sync/zipball/a1d8f244eb19e3e2a96abc4686cebc80995bbc90",
+            "reference": "a1d8f244eb19e3e2a96abc4686cebc80995bbc90",
+            "shasum": ""
+        },
+        "require": {
+            "amphp/amp": "^2"
+        },
+        "require-dev": {
+            "amphp/phpunit-util": "^1",
+            "friendsofphp/php-cs-fixer": "^2.3",
+            "phpunit/phpunit": "^6"
+        },
+        "time": "2017-11-29T21:48:53+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Amp\\Sync\\": "lib"
+            },
+            "files": [
+                "lib/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Stephen Coakley",
+                "email": "me@stephencoakley.com"
+            },
+            {
+                "name": "Aaron Piotrowski",
+                "email": "aaron@trowski.com"
+            }
+        ],
+        "description": "Mutex, Semaphore, and other synchronization tools for Amp.",
+        "homepage": "https://github.com/amphp/sync",
+        "keywords": [
+            "async",
+            "asynchronous",
+            "mutex",
+            "semaphore",
+            "synchronization"
+        ]
+    },
+    {
+        "name": "amphp/parallel",
+        "version": "v1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/amphp/parallel.git",
+            "reference": "687776dc6933af4c6009ac58f915faf45e8463ce"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/amphp/parallel/zipball/687776dc6933af4c6009ac58f915faf45e8463ce",
+            "reference": "687776dc6933af4c6009ac58f915faf45e8463ce",
+            "shasum": ""
+        },
+        "require": {
+            "amphp/amp": "^2",
+            "amphp/byte-stream": "^1.5",
+            "amphp/parser": "^1",
+            "amphp/process": "^1",
+            "amphp/sync": "^1.0.1"
+        },
+        "require-dev": {
+            "amphp/php-cs-fixer-config": "dev-master",
+            "amphp/phpunit-util": "^1",
+            "phpunit/phpunit": "^6"
+        },
+        "suggest": {
+            "ext-pthreads": "Required for thread contexts"
+        },
+        "time": "2019-01-09T21:31:46+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Amp\\Parallel\\": "lib"
+            },
+            "files": [
+                "lib/Worker/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Stephen Coakley",
+                "email": "me@stephencoakley.com"
+            },
+            {
+                "name": "Aaron Piotrowski",
+                "email": "aaron@trowski.com"
+            }
+        ],
+        "description": "Parallel processing component for Amp.",
+        "homepage": "https://github.com/amphp/parallel",
+        "keywords": [
+            "async",
+            "asynchronous",
+            "concurrent",
+            "multi-processing",
+            "multi-threading"
+        ]
+    },
+    {
+        "name": "amphp/file",
+        "version": "v0.3.5",
+        "version_normalized": "0.3.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/amphp/file.git",
+            "reference": "ba57064e7c0cbcae89429afb2ba93b8f31bd7fc8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/amphp/file/zipball/ba57064e7c0cbcae89429afb2ba93b8f31bd7fc8",
+            "reference": "ba57064e7c0cbcae89429afb2ba93b8f31bd7fc8",
+            "shasum": ""
+        },
+        "require": {
+            "amphp/amp": "^2",
+            "amphp/byte-stream": "^1",
+            "amphp/parallel": "^1"
+        },
+        "require-dev": {
+            "amphp/php-cs-fixer-config": "dev-master",
+            "amphp/phpunit-util": "^1",
+            "phpunit/phpunit": "^6"
+        },
+        "time": "2019-03-01T16:38:04+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Amp\\File\\": "lib"
+            },
+            "files": [
+                "lib/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Niklas Keller",
+                "email": "me@kelunik.com"
+            },
+            {
+                "name": "Daniel Lowrey",
+                "email": "rdlowrey@php.net"
+            },
+            {
+                "name": "Aaron Piotrowski",
+                "email": "aaron@trowski.com"
+            }
+        ],
+        "description": "Allows non-blocking access to the filesystem for Amp.",
+        "homepage": "https://github.com/amphp/file",
+        "keywords": [
+            "amp",
+            "amphp",
+            "async",
+            "disk",
+            "file",
+            "filesystem",
+            "io",
+            "non-blocking",
+            "static"
+        ]
+    },
+    {
+        "name": "amphp/socket",
+        "version": "v0.10.11",
+        "version_normalized": "0.10.11.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/amphp/socket.git",
+            "reference": "2cb9d0ef823cfd1de4cfbd0e680c58841367f727"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/amphp/socket/zipball/2cb9d0ef823cfd1de4cfbd0e680c58841367f727",
+            "reference": "2cb9d0ef823cfd1de4cfbd0e680c58841367f727",
+            "shasum": ""
+        },
+        "require": {
+            "amphp/amp": "^2",
+            "amphp/byte-stream": "^1.1",
+            "amphp/dns": "^0.9",
+            "amphp/uri": "^0.1",
+            "php": ">=7.0"
+        },
+        "require-dev": {
+            "amphp/phpunit-util": "^1",
+            "friendsofphp/php-cs-fixer": "^2.3",
+            "phpunit/phpunit": "^6"
+        },
+        "time": "2018-10-17T16:53:02+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Amp\\Socket\\": "src"
+            },
+            "files": [
+                "src/functions.php",
+                "src/Internal/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Niklas Keller",
+                "email": "me@kelunik.com"
+            },
+            {
+                "name": "Daniel Lowrey",
+                "email": "rdlowrey@gmail.com"
+            },
+            {
+                "name": "Aaron Piotrowski",
+                "email": "aaron@trowski.com"
+            }
+        ],
+        "description": "Async socket connection / server tools for Amp.",
+        "homepage": "https://github.com/amphp/socket",
+        "keywords": [
+            "amp",
+            "async",
+            "encryption",
+            "non-blocking",
+            "sockets",
+            "tcp",
+            "tls"
+        ]
+    },
+    {
+        "name": "amphp/artax",
+        "version": "v3.0.14",
+        "version_normalized": "3.0.14.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/amphp/artax.git",
+            "reference": "84ba8e2014a81e399541f3dc3a6352bab09c980c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/amphp/artax/zipball/84ba8e2014a81e399541f3dc3a6352bab09c980c",
+            "reference": "84ba8e2014a81e399541f3dc3a6352bab09c980c",
+            "shasum": ""
+        },
+        "require": {
+            "amphp/amp": "^2",
+            "amphp/byte-stream": "^1.1.6",
+            "amphp/file": "^0.2 || ^0.3",
+            "amphp/socket": "^0.10.5",
+            "amphp/uri": "^0.1",
+            "kelunik/certificate": "^1.1",
+            "php": ">=7.0"
+        },
+        "require-dev": {
+            "amphp/phpunit-util": "^1",
+            "friendsofphp/php-cs-fixer": "^2.3",
+            "phpunit/phpunit": "^6"
+        },
+        "time": "2018-02-01T20:29:48+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Amp\\Artax\\": "lib"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Niklas Keller",
+                "email": "me@kelunik.com"
+            },
+            {
+                "name": "Daniel Lowrey",
+                "email": "rdlowrey@gmail.com"
+            }
+        ],
+        "description": "Asynchronous parallel HTTP/1.1 client built on the Amp concurrency framework",
+        "homepage": "https://github.com/amphp/artax",
+        "keywords": [
+            "async",
+            "client",
+            "http",
+            "non-blocking",
+            "parallel",
+            "rest"
+        ]
+    },
+    {
+        "name": "evenement/evenement",
+        "version": "v3.0.1",
+        "version_normalized": "3.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/igorw/evenement.git",
+            "reference": "531bfb9d15f8aa57454f5f0285b18bec903b8fb7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/igorw/evenement/zipball/531bfb9d15f8aa57454f5f0285b18bec903b8fb7",
+            "reference": "531bfb9d15f8aa57454f5f0285b18bec903b8fb7",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.0"
+        },
+        "time": "2017-07-23T21:35:13+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Evenement": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Igor Wiedler",
+                "email": "igor@wiedler.ch"
+            }
+        ],
+        "description": "Événement is a very simple event dispatching library for PHP",
+        "keywords": [
+            "event-dispatcher",
+            "event-emitter"
+        ]
+    },
+    {
+        "name": "yoshi2889/collections",
+        "version": "v0.1.6",
+        "version_normalized": "0.1.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Yoshi2889/collections.git",
+            "reference": "32d9531f66584bfae51c09c7a505db1ce5a559b0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Yoshi2889/collections/zipball/32d9531f66584bfae51c09c7a505db1ce5a559b0",
+            "reference": "32d9531f66584bfae51c09c7a505db1ce5a559b0",
+            "shasum": ""
+        },
+        "require": {
+            "evenement/evenement": "^3.0 || ^2.0",
+            "php": ">=7.0.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.2"
+        },
+        "suggest": {
+            "yoshi2889/validation-closures": "Closures to use for validating data."
+        },
+        "time": "2017-08-27T19:19:15+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Yoshi2889\\Collections\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Yoshi2889",
+                "email": "rick.2889@gmail.com",
+                "homepage": "https://nanosector.nl",
+                "role": "Lead Developer"
+            }
+        ],
+        "description": "Simple Collection class allowing storage of specific data."
+    },
+    {
+        "name": "yoshi2889/multipart-builder",
+        "version": "v0.1.1",
+        "version_normalized": "0.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Yoshi2889/multipart-builder.git",
+            "reference": "6b97bdfe0270d177dcd35370d5eea2c771198e31"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Yoshi2889/multipart-builder/zipball/6b97bdfe0270d177dcd35370d5eea2c771198e31",
+            "reference": "6b97bdfe0270d177dcd35370d5eea2c771198e31",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0.0",
+            "yoshi2889/collections": "^0.1"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.3"
+        },
+        "time": "2017-08-27T20:19:33+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "MultipartBuilder\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Yoshi2889",
+                "email": "rick.2889@gmail.com",
+                "homepage": "https://nanosector.nl",
+                "role": "Lead Developer"
+            }
+        ],
+        "description": "Stream-independent RFC2388 compliant multipart form data builder."
+    },
+    {
+        "name": "react/promise",
+        "version": "v2.7.1",
+        "version_normalized": "2.7.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/promise.git",
+            "reference": "31ffa96f8d2ed0341a57848cbb84d88b89dd664d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/promise/zipball/31ffa96f8d2ed0341a57848cbb84d88b89dd664d",
+            "reference": "31ffa96f8d2ed0341a57848cbb84d88b89dd664d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.8"
+        },
+        "time": "2019-01-07T21:25:54+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\Promise\\": "src/"
+            },
+            "files": [
+                "src/functions_include.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jan Sorgalla",
+                "email": "jsorgalla@gmail.com"
+            }
+        ],
+        "description": "A lightweight implementation of CommonJS Promises/A for PHP",
+        "keywords": [
+            "promise",
+            "promises"
+        ]
+    },
+    {
+        "name": "react/event-loop",
+        "version": "v1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/event-loop.git",
+            "reference": "a0ecac955c67b57c40fe4a1b88a7cca1b58c982d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/event-loop/zipball/a0ecac955c67b57c40fe4a1b88a7cca1b58c982d",
+            "reference": "a0ecac955c67b57c40fe4a1b88a7cca1b58c982d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^7.0 || ^6.4 || ^5.7 || ^4.8.35"
+        },
+        "suggest": {
+            "ext-event": "~1.0 for ExtEventLoop",
+            "ext-pcntl": "For signal handling support when using the StreamSelectLoop",
+            "ext-uv": "* for ExtUvLoop"
+        },
+        "time": "2019-02-07T16:19:49+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\EventLoop\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "ReactPHP's core reactor event loop that libraries can use for evented I/O.",
+        "keywords": [
+            "asynchronous",
+            "event-loop"
+        ]
+    },
+    {
+        "name": "react/promise-timer",
+        "version": "v1.5.1",
+        "version_normalized": "1.5.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/promise-timer.git",
+            "reference": "35fb910604fd86b00023fc5cda477c8074ad0abc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/promise-timer/zipball/35fb910604fd86b00023fc5cda477c8074ad0abc",
+            "reference": "35fb910604fd86b00023fc5cda477c8074ad0abc",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3",
+            "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3.5",
+            "react/promise": "^2.7.0 || ^1.2.1"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35"
+        },
+        "time": "2019-03-27T18:10:32+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\Promise\\Timer\\": "src/"
+            },
+            "files": [
+                "src/functions_include.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Christian Lück",
+                "email": "christian@lueck.tv"
+            }
+        ],
+        "description": "A trivial implementation of timeouts for Promises, built on top of ReactPHP.",
+        "homepage": "https://github.com/reactphp/promise-timer",
+        "keywords": [
+            "async",
+            "event-loop",
+            "promise",
+            "reactphp",
+            "timeout",
+            "timer"
+        ]
+    },
+    {
+        "name": "clue/block-react",
+        "version": "v1.3.1",
+        "version_normalized": "1.3.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/clue/reactphp-block.git",
+            "reference": "2f516b28259c203d67c4c963772dd7e9db652737"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/clue/reactphp-block/zipball/2f516b28259c203d67c4c963772dd7e9db652737",
+            "reference": "2f516b28259c203d67c4c963772dd7e9db652737",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3",
+            "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3.5",
+            "react/promise": "^2.7 || ^1.2.1",
+            "react/promise-timer": "^1.5"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35"
+        },
+        "time": "2019-04-09T11:45:04+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/functions_include.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Christian Lück",
+                "email": "christian@lueck.tv"
+            }
+        ],
+        "description": "Lightweight library that eases integrating async components built for ReactPHP in a traditional, blocking environment.",
+        "homepage": "https://github.com/clue/reactphp-block",
+        "keywords": [
+            "async",
+            "await",
+            "blocking",
+            "event loop",
+            "promise",
+            "reactphp",
+            "sleep",
+            "synchronous"
+        ]
+    },
+    {
+        "name": "psr/http-message",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/http-message.git",
+            "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+            "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2016-08-06T14:39:51+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Http\\Message\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for HTTP messages",
+        "homepage": "https://github.com/php-fig/http-message",
+        "keywords": [
+            "http",
+            "http-message",
+            "psr",
+            "psr-7",
+            "request",
+            "response"
+        ]
+    },
+    {
+        "name": "ringcentral/psr7",
+        "version": "1.2.2",
+        "version_normalized": "1.2.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ringcentral/psr7.git",
+            "reference": "dcd84bbb49b96c616d1dcc8bfb9bef3f2cd53d1c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ringcentral/psr7/zipball/dcd84bbb49b96c616d1dcc8bfb9bef3f2cd53d1c",
+            "reference": "dcd84bbb49b96c616d1dcc8bfb9bef3f2cd53d1c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3",
+            "psr/http-message": "~1.0"
+        },
+        "provide": {
+            "psr/http-message-implementation": "1.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2018-01-15T21:00:49+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "RingCentral\\Psr7\\": "src/"
+            },
+            "files": [
+                "src/functions_include.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "PSR-7 message implementation",
+        "keywords": [
+            "http",
+            "message",
+            "stream",
+            "uri"
+        ]
+    },
+    {
+        "name": "react/stream",
+        "version": "v1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/stream.git",
+            "reference": "50426855f7a77ddf43b9266c22320df5bf6c6ce6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/stream/zipball/50426855f7a77ddf43b9266c22320df5bf6c6ce6",
+            "reference": "50426855f7a77ddf43b9266c22320df5bf6c6ce6",
+            "shasum": ""
+        },
+        "require": {
+            "evenement/evenement": "^3.0 || ^2.0 || ^1.0",
+            "php": ">=5.3.8",
+            "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3.5"
+        },
+        "require-dev": {
+            "clue/stream-filter": "~1.2",
+            "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35"
+        },
+        "time": "2019-01-01T16:15:09+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\Stream\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Event-driven readable and writable streams for non-blocking I/O in ReactPHP",
+        "keywords": [
+            "event-driven",
+            "io",
+            "non-blocking",
+            "pipe",
+            "reactphp",
+            "readable",
+            "stream",
+            "writable"
+        ]
+    },
+    {
+        "name": "react/cache",
+        "version": "v0.5.0",
+        "version_normalized": "0.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/cache.git",
+            "reference": "7d7da7fb7574d471904ba357b39bbf110ccdbf66"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/cache/zipball/7d7da7fb7574d471904ba357b39bbf110ccdbf66",
+            "reference": "7d7da7fb7574d471904ba357b39bbf110ccdbf66",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "react/promise": "~2.0|~1.1"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35"
+        },
+        "time": "2018-06-25T12:52:40+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\Cache\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Async, Promise-based cache interface for ReactPHP",
+        "keywords": [
+            "cache",
+            "caching",
+            "promise",
+            "reactphp"
+        ]
+    },
+    {
+        "name": "react/dns",
+        "version": "v0.4.17",
+        "version_normalized": "0.4.17.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/dns.git",
+            "reference": "0f30c6ceb71504d359d51132a97e1703051f1589"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/dns/zipball/0f30c6ceb71504d359d51132a97e1703051f1589",
+            "reference": "0f30c6ceb71504d359d51132a97e1703051f1589",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "react/cache": "^1.0 || ^0.6 || ^0.5 || ^0.4 || ^0.3",
+            "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3.5",
+            "react/promise": "^2.1 || ^1.2.1",
+            "react/promise-timer": "^1.2",
+            "react/stream": "^1.0 || ^0.7 || ^0.6 || ^0.5 || ^0.4.5"
+        },
+        "require-dev": {
+            "clue/block-react": "^1.2",
+            "phpunit/phpunit": "^7.0 || ^6.4 || ^5.7 || ^4.8.35"
+        },
+        "time": "2019-04-01T07:31:55+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\Dns\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Async DNS resolver for ReactPHP",
+        "keywords": [
+            "async",
+            "dns",
+            "dns-resolver",
+            "reactphp"
+        ]
+    },
+    {
+        "name": "react/socket",
+        "version": "v1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/socket.git",
+            "reference": "23b7372bb25cea934f6124f5bdac34e30161959e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/socket/zipball/23b7372bb25cea934f6124f5bdac34e30161959e",
+            "reference": "23b7372bb25cea934f6124f5bdac34e30161959e",
+            "shasum": ""
+        },
+        "require": {
+            "evenement/evenement": "^3.0 || ^2.0 || ^1.0",
+            "php": ">=5.3.0",
+            "react/dns": "^0.4.13",
+            "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3.5",
+            "react/promise": "^2.6.0 || ^1.2.1",
+            "react/promise-timer": "^1.4.0",
+            "react/stream": "^1.1"
+        },
+        "require-dev": {
+            "clue/block-react": "^1.2",
+            "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35"
+        },
+        "time": "2019-01-07T14:10:13+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\Socket\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Async, streaming plaintext TCP/IP and secure TLS socket server and client connections for ReactPHP",
+        "keywords": [
+            "Connection",
+            "Socket",
+            "async",
+            "reactphp",
+            "stream"
+        ]
+    },
+    {
+        "name": "react/http-client",
+        "version": "v0.5.9",
+        "version_normalized": "0.5.9.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/http-client.git",
+            "reference": "f8e81a022b61938e0b37c94c6351fc170b7d87f6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/http-client/zipball/f8e81a022b61938e0b37c94c6351fc170b7d87f6",
+            "reference": "f8e81a022b61938e0b37c94c6351fc170b7d87f6",
+            "shasum": ""
+        },
+        "require": {
+            "evenement/evenement": "^3.0 || ^2.0 || ^1.0",
+            "php": ">=5.3.0",
+            "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3",
+            "react/promise": "^2.1 || ^1.2.1",
+            "react/socket": "^1.0 || ^0.8.4",
+            "react/stream": "^1.0 || ^0.7.1",
+            "ringcentral/psr7": "^1.2"
+        },
+        "require-dev": {
+            "clue/block-react": "^1.2",
+            "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35",
+            "react/promise-stream": "^1.1"
+        },
+        "time": "2018-04-10T11:38:54+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\HttpClient\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Event-driven, streaming HTTP client for ReactPHP",
+        "keywords": [
+            "http"
+        ]
+    },
+    {
+        "name": "psr/log",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/log.git",
+            "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/log/zipball/6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
+            "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2018-11-20T15:27:04+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Log\\": "Psr/Log/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for logging libraries",
+        "homepage": "https://github.com/php-fig/log",
+        "keywords": [
+            "log",
+            "psr",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "unreal4u/dummy-logger",
+        "version": "v1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/unreal4u/dummyLogger.git",
+            "reference": "b9f936257bc6c265d6410d68b30807b889caebbd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/unreal4u/dummyLogger/zipball/b9f936257bc6c265d6410d68b30807b889caebbd",
+            "reference": "b9f936257bc6c265d6410d68b30807b889caebbd",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0.0",
+            "psr/log": "~1.0"
+        },
+        "time": "2018-01-08T13:02:56+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "unreal4u\\Dummy\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Camilo Sperberg",
+                "email": "me+ghdummylogger@unreal4u.com"
+            }
+        ],
+        "description": "Dummy logger that implements PSR-3 so that my own classes can work with a common base"
+    },
+    {
+        "name": "unreal4u/telegram-api",
+        "version": "v3.4.1",
+        "version_normalized": "3.4.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/unreal4u/telegram-api.git",
+            "reference": "24b2c207e630b9584765fc47d0f83facc066e5a8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/unreal4u/telegram-api/zipball/24b2c207e630b9584765fc47d0f83facc066e5a8",
+            "reference": "24b2c207e630b9584765fc47d0f83facc066e5a8",
+            "shasum": ""
+        },
+        "require": {
+            "amphp/artax": "^3",
+            "clue/block-react": "^1.1",
+            "php": ">=7.0.0",
+            "react/http-client": "^0.5",
+            "react/promise": "^2.5",
+            "unreal4u/dummy-logger": "^1.0",
+            "yoshi2889/multipart-builder": "^0.1.1"
+        },
+        "require-dev": {
+            "monolog/monolog": "^1.17",
+            "phpunit/php-code-coverage": "^5.2",
+            "phpunit/phpunit": "^6.2",
+            "squizlabs/php_codesniffer": "^3.0"
+        },
+        "time": "2018-08-30T22:05:18+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "unreal4u\\TelegramAPI\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Camilo Sperberg",
+                "email": "me+tgapi@unreal4u.com",
+                "homepage": "https://github.com/unreal4u/telegram-api/graphs/contributors"
+            }
+        ],
+        "description": "A complete Telegram bot API implementation written in PHP, with support for inline bots!",
+        "keywords": [
+            "api",
+            "telegram",
+            "telegram bot"
+        ]
+    },
+    {
+        "name": "blocktrail/simply-random",
+        "version": "v1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blocktrail/simply-random-php.git",
+            "reference": "50b7a8ae6ca8354a8d982ccdda35ba22bad9f1e7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blocktrail/simply-random-php/zipball/50b7a8ae6ca8354a8d982ccdda35ba22bad9f1e7",
+            "reference": "50b7a8ae6ca8354a8d982ccdda35ba22bad9f1e7",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mcrypt": "*",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.3.*",
+            "squizlabs/php_codesniffer": "1.*"
+        },
+        "time": "2014-12-15T15:37:46+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "BlockTrail\\SimplyRandom\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ruben de Vries",
+                "email": "ruben@blocktrail.com",
+                "homepage": "https://www.blocktrail.com"
+            }
+        ],
+        "description": "A simple library for generating secure randomness (strings, integers, shuffling)",
+        "homepage": "https://github.com/blocktrail/simply-random",
+        "keywords": [
+            "random"
+        ]
+    }
+]
