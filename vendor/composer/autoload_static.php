@@ -35,6 +35,10 @@ class ComposerStaticInit7a1b79ebd04db42e04bab9bede564abf
         array (
             'Yoshi2889\\Collections\\' => 22,
         ),
+        'T' => 
+        array (
+            'TH\\Lock\\' => 8,
+        ),
         'R' => 
         array (
             'RingCentral\\Psr7\\' => 17,
@@ -98,6 +102,10 @@ class ComposerStaticInit7a1b79ebd04db42e04bab9bede564abf
         'Yoshi2889\\Collections\\' => 
         array (
             0 => __DIR__ . '/..' . '/yoshi2889/collections/src',
+        ),
+        'TH\\Lock\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/texthtml/php-lock/src',
         ),
         'RingCentral\\Psr7\\' => 
         array (

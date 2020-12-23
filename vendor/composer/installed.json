@@ -876,7 +876,8 @@
             "non-blocking",
             "parallel",
             "rest"
-        ]
+        ],
+        "abandoned": "amphp/http-client"
     },
     {
         "name": "evenement/evenement",
@@ -1558,7 +1559,8 @@
         "description": "Event-driven, streaming HTTP client for ReactPHP",
         "keywords": [
             "http"
-        ]
+        ],
+        "abandoned": "react/http"
     },
     {
         "name": "psr/log",
@@ -1751,5 +1753,47 @@
         "keywords": [
             "random"
         ]
+    },
+    {
+        "name": "texthtml/php-lock",
+        "version": "v2.2.1",
+        "version_normalized": "2.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/texthtml/php-lock.git",
+            "reference": "037ff0b0c80ba16742c70261aff4760229d3af31"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/texthtml/php-lock/zipball/037ff0b0c80ba16742c70261aff4760229d3af31",
+            "reference": "037ff0b0c80ba16742c70261aff4760229d3af31",
+            "shasum": ""
+        },
+        "require": {
+            "psr/log": "~1.0"
+        },
+        "require-dev": {
+            "php-vfs/php-vfs": "~1.2",
+            "phpspec/phpspec": "^2.4"
+        },
+        "time": "2017-07-09T17:02:50+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "TH\\Lock\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "aGPLv3"
+        ],
+        "authors": [
+            {
+                "name": "Mathieu Rochette",
+                "email": "mathieu@rochette.cc"
+            }
+        ],
+        "description": "ressource lock"
     }
 ]

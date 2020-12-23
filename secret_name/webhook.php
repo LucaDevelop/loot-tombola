@@ -25,6 +25,11 @@ use \unreal4u\TelegramAPI\Telegram\Methods\DeleteMessage;
 use \unreal4u\TelegramAPI\Telegram\Methods\GetChatAdministrators;
 use \unreal4u\TelegramAPI\Telegram\Methods\LeaveChat;
 
+use TH\Lock\FileFactory;
+
+$factory = new FileFactory(__DIR__);
+$lock = $factory->create('loottombola');
+
 function DBLogin($db_host, $username, $pwd, $database)
 {
 
@@ -230,7 +235,9 @@ if(isset($update->message))
 													"🥉 *Cinquina:* Cinque numeri sulla stessa riga (una riga completa)\n".
 													"🥈 *Decina:* Due righe complete sulla stessa cartella\n".
 													"🥇 *Tombola:* una cartella tutta completa\n".
-													"*NB:* Se un premio viene vinto da più giocatori contemporaneamente il vincitore finale sarà estratto a sorte\n\n".
+													"*NB:* Se un premio viene vinto da più giocatori contemporaneamente il vincitore finale sarà estratto a sorte.\n".
+													(!ALLOW_MULTIPLE_WINNINGS ? "*NBB:* Se durante la tombola vinci un premio per te l'estrazione termina e non avrai la possibilità di vincerne altri.\n":"").
+													"\n".
 													"✅  Sono state generate 5 cartelle per te.";
 								$sendMessage->parse_mode = "Markdown";
 								$inlineKeyboard = new Markup();
@@ -1053,60 +1060,81 @@ function RefreshIscrizioniTombola($tblid, &$tgLog, &$loop, $numtry = 0)
 {
 	if(file_exists("tbl_".$tblid.".txt"))
 	{
-		$tblobj = json_decode(file_get_contents("tbl_".$tblid.".txt"), true);
-		$parts = 0;
-		$carts = 0;
-		$files = glob("cart_".$tblid."_*.txt");
-		foreach($files as $f)
+		if(lock())
 		{
-			$cf = json_decode(file_get_contents($f), true);
-			$parts++;
-			$carts += count($cf['cartelle']);
-		}
-		$editMessageText = new EditMessageText();
-		$editMessageText->chat_id = (TOMBOLA_TESTING ? TEST_CHANNEL_NAME : CHANNEL_NAME);
-		$editMessageText->message_id = $tblobj['msgid'];
-		$editMessageText->text = $tblobj['text']."\n\n_Partecipanti: ".number_format($parts,0,"",".")."\nCartelle attive: ".number_format($carts,0,"",".")."_";
-		$inlineKeyboard = new Markup();
-		$inlineKeyboardButton = new Button();
-		$inlineKeyboardButton->text = "Partecipa 🏷";
-		$inlineKeyboardButton->url = "https://t.me/".TELEGRAM_BOT_USERNAME."?start=tbl_$tblid";
-		$inlineKeyboard->inline_keyboard[][] = $inlineKeyboardButton;
-		$inlineKeyboardButton = new Button();
-		$inlineKeyboardButton->text = "Condividi 🗣";
-		$inlineKeyboardButton->url = "https://t.me/share/url?url=".htmlentities("https://t.me/".str_replace('@','', (TOMBOLA_TESTING ? TEST_CHANNEL_NAME : CHANNEL_NAME))."/".$tblobj['msgid']);
-		$inlineKeyboard->inline_keyboard[][] = $inlineKeyboardButton;
-		$editMessageText->reply_markup = $inlineKeyboard;
-		$editMessageText->parse_mode = "Markdown";
-		$promise = $tgLog->performApiRequest($editMessageText);
-		$promise->then(
-		function () {
-			},
-			function (\Exception $exception) use ($editMessageText, $tblid, $tgLog, $loop, $numtry){
-				if($numtry < 10)
+			$dorefresh = true;
+			if(file_exists('tombolarefresh.txt'))
+			{
+				$lastrefresh = file_get_contents('tombolarefresh.txt');
+				if(time() - $lastrefresh < 5)
 				{
-					$newnumtry = $numtry+1;
-					$exctxt = $exception->getMessage();
-					$mtch = [];
-					$resmt = preg_match('/\d+$/', $exctxt, $mtch);
-					if($resmt === 1 && startsWith($exctxt, "Too Many Requests"))
-					{
-						$secwait = $mtch[0];
-						sleep($secwait);
-						RefreshIscrizioniTombola($tblid, $tgLog, $loop, $newnumtry);
-					}
-					else
-					{
-						LogAndSegnala($editMessageText, $exception->getMessage(), __LINE__, $loop, $tgLog);
-					}
-				}
-				else
-				{
-					//SendAdmin("Limite di retry raggiunto", $loop, $tgLog);
+					$dorefresh = false;
 				}
 			}
-		);
-		$loop->run();
+			if($dorefresh)
+			{
+				$tblobj = json_decode(file_get_contents("tbl_".$tblid.".txt"), true);
+				$parts = 0;
+				$carts = 0;
+				$files = glob("cart_".$tblid."_*.txt");
+				foreach($files as $f)
+				{
+					$cf = json_decode(file_get_contents($f), true);
+					$parts++;
+					$carts += count($cf['cartelle']);
+				}
+				$editMessageText = new EditMessageText();
+				$editMessageText->chat_id = (TOMBOLA_TESTING ? TEST_CHANNEL_NAME : CHANNEL_NAME);
+				$editMessageText->message_id = $tblobj['msgid'];
+				$editMessageText->text = $tblobj['text']."\n\n_Partecipanti: ".number_format($parts,0,"",".")."\nCartelle attive: ".number_format($carts,0,"",".")."_";
+				$inlineKeyboard = new Markup();
+				$inlineKeyboardButton = new Button();
+				$inlineKeyboardButton->text = "Partecipa 🏷";
+				$inlineKeyboardButton->url = "https://t.me/".TELEGRAM_BOT_USERNAME."?start=tbl_$tblid";
+				$inlineKeyboard->inline_keyboard[][] = $inlineKeyboardButton;
+				$inlineKeyboardButton = new Button();
+				$inlineKeyboardButton->text = "Condividi 🗣";
+				$inlineKeyboardButton->url = "https://t.me/share/url?url=".htmlentities("https://t.me/".str_replace('@','', (TOMBOLA_TESTING ? TEST_CHANNEL_NAME : CHANNEL_NAME))."/".$tblobj['msgid']);
+				$inlineKeyboard->inline_keyboard[][] = $inlineKeyboardButton;
+				$editMessageText->reply_markup = $inlineKeyboard;
+				$editMessageText->parse_mode = "Markdown";
+				$promise = $tgLog->performApiRequest($editMessageText);
+				$promise->then(
+				function () {
+					file_put_contents('tombolarefresh.txt', time());
+					},
+					function (\Exception $exception) use ($editMessageText, $tblid, $tgLog, $loop, $numtry){
+						if($numtry < 10)
+						{
+							$newnumtry = $numtry+1;
+							$exctxt = $exception->getMessage();
+							$mtch = [];
+							$resmt = preg_match('/\d+$/', $exctxt, $mtch);
+							if($resmt === 1 && startsWith($exctxt, "Too Many Requests"))
+							{
+								$secwait = $mtch[0];
+								sleep($secwait);
+								RefreshIscrizioniTombola($tblid, $tgLog, $loop, $newnumtry);
+							}
+							else
+							{
+								LogAndSegnala($editMessageText, $exception->getMessage(), __LINE__, $loop, $tgLog);
+							}
+						}
+						else
+						{
+							//SendAdmin("Limite di retry raggiunto", $loop, $tgLog);
+						}
+					}
+				);
+				$loop->run();
+			}
+			unlock();
+		}
+		else
+		{
+			error_log('webhook - lockato');
+		}
 	}
 }
 
@@ -1357,5 +1385,22 @@ function HadWon($tblid, $lobby, $username)
 		}
 	}
 	return $res;
+}
+
+function lock(){
+    global $lock;
+    try{
+        $lock->acquire();
+        return true;
+    }
+    catch(\Exception $ex)
+    {
+        return false;
+    }
+}
+
+function unlock(){
+    global $lock;
+    $lock->release();
 }
 ?>

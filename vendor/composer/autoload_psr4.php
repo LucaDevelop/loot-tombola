@@ -9,6 +9,7 @@ return array(
     'unreal4u\\TelegramAPI\\' => array($vendorDir . '/unreal4u/telegram-api/src'),
     'unreal4u\\Dummy\\' => array($vendorDir . '/unreal4u/dummy-logger/src'),
     'Yoshi2889\\Collections\\' => array($vendorDir . '/yoshi2889/collections/src'),
+    'TH\\Lock\\' => array($vendorDir . '/texthtml/php-lock/src'),
     'RingCentral\\Psr7\\' => array($vendorDir . '/ringcentral/psr7/src'),
     'React\\Stream\\' => array($vendorDir . '/react/stream/src'),
     'React\\Socket\\' => array($vendorDir . '/react/socket/src'),

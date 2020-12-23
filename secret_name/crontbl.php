@@ -438,7 +438,7 @@ if(true)
 						}
 						$sendMessage = new SendMessage();
 						$sendMessage->chat_id = ($vincids[$e][0] < 0 ? ADMIN_CHAT_ID : $vincids[$e][0]);
-						$sendMessage->text = ($vincids[$e][0] < 0 ? $vincids[$e][0]." - " : "")."🎉 Hai fatto *".$vintxt[$e]."!*";
+						$sendMessage->text = ($vincids[$e][0] < 0 ? $vincids[$e][0]." - " : "")."🎉 Hai fatto *".$vintxt[$e]."!*\n".(isset($tblobj[strtolower($vintxt[$e])]) ? "Hai vinto: *".$tblobj[strtolower($vintxt[$e])]."*" : "");
 						$sendMessage->parse_mode = "Markdown";
 						$promise = $tgLog->performApiRequest($sendMessage);
 						$promise->then(
