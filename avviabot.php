@@ -10,18 +10,6 @@ use unreal4u\TelegramAPI\Telegram\Types\WebhookInfo;
 use \unreal4u\TelegramAPI\TgLog;
 use \unreal4u\TelegramAPI\Telegram\Methods\SetWebhook;
 
-function DBLogin($db_host, $username, $pwd, $database)
-{
-
-	$connection = mysqli_connect($db_host,$username,$pwd,$database);
-
-	if(!$connection)
-	{
-		return false;
-	}
-	return $connection;
-}
-
 $loop = \React\EventLoop\Factory::create();
 $tgLog = new TgLog(TELEGRAM_BOT_KEY, new HttpClientRequestHandler($loop));
 $webHookInfo = new GetWebhookInfo();
@@ -32,9 +20,7 @@ $promise->then(
 		{
 			if(isset($_POST['dbpwd']))
 			{
-				$connection = DBLogin(DATABASE_HOST, DATABASE_USERNAME, $_POST['dbpwd'], DATABASE_NAME);
-				
-				if($connection !== false)
+				if($_POST['dbpwd'] == ADMIN_PASSWORD)
 				{
 					$loop = Factory::create();
 					$tgLog = new TgLog(TELEGRAM_BOT_KEY, new HttpClientRequestHandler($loop));

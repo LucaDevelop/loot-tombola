@@ -30,18 +30,6 @@ use TH\Lock\FileFactory;
 $factory = new FileFactory(__DIR__);
 $lock = $factory->create('loottombola');
 
-function DBLogin($db_host, $username, $pwd, $database)
-{
-
-	$connection = mysqli_connect($db_host,$username,$pwd,$database);
-
-	if(!$connection)
-	{
-		return false;
-	}
-	return $connection;
-}
-
 $loop = Factory::create();
 $tgLog = new TgLog(TELEGRAM_BOT_KEY, new HttpClientRequestHandler($loop));
 $updateData = json_decode(file_get_contents('php://input'), true);
@@ -58,7 +46,7 @@ if(isset($update->message))
 	$username = $user->username;
 	$message_id = $message->message_id;
 	$msgtxt = $message->text;
-	if($chattype == 'supergroup' || $chattype == 'group')
+	/*if($chattype == 'supergroup' || $chattype == 'group')
 	{
 		if($chat_id == (TOMBOLA_TESTING ? TEST_GROUP_ID : GROUP_ID))
 		{
@@ -147,7 +135,8 @@ if(isset($update->message))
 				$loop->run();
 		}
 	}
-	else if($chattype == 'private')
+	else */
+	if($chattype == 'private')
 	{
 		file_put_contents('users/user_'.$userid.'.txt', $username);
 		if($msgtxt == '/start')
@@ -222,7 +211,7 @@ if(isset($update->message))
 								file_put_contents("cart_".$tbl_id."_".$userid.".txt", json_encode($savedcarts, JSON_PRETTY_PRINT));
 								$sendMessage = new SendMessage();
 								$sendMessage->chat_id = $chat_id;
-								$sendMessage->text = "Ciao ".str_replace("_","\\_",$username).", ecco come funziona la 🎅 *Tombola di Natale di LootBot* 🎄:\n\n".
+								$sendMessage->text = "Ciao ".str_replace("_","\\_",$username).", ecco come funziona la 🗳 *Tombola di LootBot* ⭐️:\n\n".
 													"*Acquistare le cartelle:*\n".
 													"Per acquistare le cartelle basta premere il pulsante *Partecipa 🏷* sul messaggio nel canale. Verrai rimandato su questo bot e ti verranno generate 5 cartelle.\n".
 													"In ogni momento, durante il gioco, si possono vedere le proprie cartelle con il comando /cartelle. Durante l'estrazione verranno evidenziati in rosso i numeri posseduti che sono usciti.\n\n".
@@ -238,7 +227,7 @@ if(isset($update->message))
 													"*NB:* Se un premio viene vinto da più giocatori contemporaneamente il vincitore finale sarà estratto a sorte.\n".
 													(!ALLOW_MULTIPLE_WINNINGS ? "*NBB:* Se durante la tombola vinci un premio per te l'estrazione termina e non avrai la possibilità di vincerne altri.\n":"").
 													"\n".
-													"✅  Sono state generate 5 cartelle per te.";
+													"✅  Sono state generate 5 cartelle per te.\n\n_Powered by @LucaDevelop_";
 								$sendMessage->parse_mode = "Markdown";
 								$inlineKeyboard = new Markup();
 								$sendMessage->reply_markup = $inlineKeyboard;
@@ -434,6 +423,26 @@ if(isset($update->message))
 			);
 			$loop->run();
 		}
+		else if(startsWith($msgtxt, "/getbotuser ") && in_array($userid, CAN_START_GAME))
+		{
+			$usrtocheck = str_replace('@','',str_replace("/getbotuser ", "", $msgtxt));
+			$usrfiles = glob('users/user_*.txt');
+			$checkuid = '';
+			foreach($usrfiles as $uf)
+			{
+				$fun = file_get_contents($uf);
+				if($fun == $usrtocheck)
+				{
+					$checkuid = str_replace('user_','',basename($uf, '.txt'));
+					SendAdmin($checkuid, $loop, $tgLog);
+					break;
+				}
+			}
+			if($checkuid == '')
+			{
+				SendAdmin('Non trovato', $loop, $tgLog);
+			}
+		}
 		else if($msgtxt == '/tombola')
 		{
 			$files = glob("tbl*.txt");
@@ -444,13 +453,7 @@ if(isset($update->message))
 				$sendMessage = new SendMessage();
 				$sendMessage->chat_id = $chat_id;
 				$sendMessage->parse_mode = "Markdown";
-				$sendMessage->text = $tblobj['text'];
-				$inlineKeyboard = new Markup();
-				$inlineKeyboardButton = new Button();
-				$inlineKeyboardButton->text = "Visualizza links invito";
-				$inlineKeyboardButton->callback_data = "showpubbl_".$tblid;
-				$inlineKeyboard->inline_keyboard[][] = $inlineKeyboardButton;
-				$sendMessage->reply_markup = $inlineKeyboard;
+				$sendMessage->text = $tblobj['text']."\n\n_Powered by @LucaDevelop_";
 				$promise = $tgLog->performApiRequest($sendMessage);
 				$promise->then(
 					function (){
@@ -719,7 +722,7 @@ function SendTombola($chat_id, $msgtxt, &$tgLog, &$loop)
 				}
 				$sendMessage = new SendMessage();
 				$sendMessage->chat_id = (TOMBOLA_TESTING ? TEST_CHANNEL_NAME : CHANNEL_NAME);
-				$tombolatxt = "🎅 *Tombola di Natale di LootBot* 🎄\n\n".
+				$tombolatxt = "🗳 *Tombola di LootBot* ⭐️\n\n".
 								"🎁 _Vincite:_\n".
 								"🎗 Ambo: *$ambo*\n".
 								"🥉 Cinquina: *$cinquina*\n".
@@ -893,31 +896,14 @@ function SendCartelle($chat_id, $userid, $username, $chattype, &$tgLog, &$loop, 
 				$cartobj = json_decode(file_get_contents($files[0]), true);
 				$sendPhoto = new SendPhoto();
 				$sendPhoto->chat_id = $chat_id;
-				$sendPhoto->photo = IMAGES_SCRIPT_BASE_URL."makecartgrp.php?tblid=".$bns[1]."&userid=".$userid."&anticache=".RandomID();
+				$sendPhoto->photo = IMAGES_SCRIPT_BASE_URL."makecartgrp.php?tblid=".$bns[1]."&userid=".$userid."&page=$numpag&anticache=".RandomID();
 				if($chattype != 'private')
 				{
 					$sendPhoto->caption = $username.", ecco le tue cartelle finita la tombola.";
 				}
 				$promise = $tgLog->performApiRequest($sendPhoto);
 				$promise->then(
-					function ($response) use ($bns, $userid, $cartobj, $chat_id, $chattype, $username, $tgLog, $loop){
-						$sendPhoto = new SendPhoto();
-						$sendPhoto->chat_id = $chat_id;
-						$sendPhoto->photo = IMAGES_SCRIPT_BASE_URL."makecartgrp.php?tblid=".$bns[1]."&userid=".$userid."&anticache=".RandomID();
-						if($chattype != 'private')
-						{
-							$sendPhoto->caption = $username.", ecco le tue cartelle finita la tombola.";
-						}
-						$promise = $tgLog->performApiRequest($sendPhoto);
-						$promise->then(
-							function ($response) use ($bns, $userid, $cartobj){
-								unlink("cart_".$bns[1]."_".$userid.".txt");
-							},
-							function (\Exception $exception) {
-								error_log("[".__LINE__."] ".$exception->getMessage());
-							}
-						);
-						$loop->run();
+					function ($response) {
 					},
 					function (\Exception $exception) {
 						error_log("[".__LINE__."] ".$exception->getMessage());

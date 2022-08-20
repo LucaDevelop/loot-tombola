@@ -1,10 +1,6 @@
 <?php
     
-    define('DATABASE_HOST', '');           // Database host
-    define('DATABASE_NAME', '');           // Name of the database to be used
-    define('DATABASE_USERNAME', '');       // User name for access to database
-    define('DATABASE_PASSWORD', '');   // Password for access to database
-	define('DATABASE_TYPE', '');   // database type
+	define('ADMIN_PASSWORD', '');   // Password per avviare, stoppare, vedere lo stato del bot
 	
 	define('TELEGRAM_BOT_KEY', '');
 	define('TELEGRAM_BOT_ID', '');
